@@ -19,3 +19,11 @@ def signup(request):
 			return HttpResponse('Failed')
 
 	return render(request, 'signup/signup.html')
+
+
+def signed_success(request):
+	emails = User.objects.values('email')
+	
+	return render(request, 'signup/signed_success.html', {'emails':emails})
+
+
