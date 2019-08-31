@@ -1,9 +1,10 @@
+import os
 from django.shortcuts import render
 import requests
 
-url = ('https://newsapi.org/v2/top-headlines?'
-       'country=us&'
-       'apiKey=a713ffa04e27486fb46b53ca2d9da630')
+API_KEY = os.environ.get("NEWS_API")
+
+url = f"https://newsapi.org/v2/top-headlines?country=us&{API_KEY}"
 
 
 def display(request):
