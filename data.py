@@ -10,18 +10,14 @@ password = 'news_database_pass'
 database = 'news_user_info'
 
 
+conn = psycopg2.connect( host=hostname, user=username, password=password, dbname=database )
+cur = conn.cursor()
+cur.execute("SELECT email FROM signup_user")
+emails = ([row[0] for row in cur.fetchall()])
+
+print(emails)
 
 
-def doQuery( conn ) :
-	cur = conn.cursor()
-	cur.execute( "SELECT email FROM signup_user" )
-
-	email_list = ([row[0] for row in cur.fetchall()])
-	print(email_list)
+conn.close()
 
 
-
-
-myConnection = psycopg2.connect( host=hostname, user=username, password=password, dbname=database )
-doQuery( myConnection )
-myConnection.close()
