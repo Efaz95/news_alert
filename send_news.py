@@ -64,6 +64,6 @@ def send_sms():
 
 
 
-#send_email()
+send_email()
 #send_sms()
 
