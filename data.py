@@ -15,9 +15,9 @@ cur = conn.cursor()
 cur.execute("SELECT email FROM signup_user")
 emails = ([row[0] for row in cur.fetchall()])
 
-print(emails)
-
 
 conn.close()
+
+
 
 
