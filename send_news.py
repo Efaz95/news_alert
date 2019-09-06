@@ -4,7 +4,7 @@ import smtplib
 from email.message import EmailMessage
 from twilio.rest import Client
 from textblob import TextBlob
-
+#import all the emails from data.py file
 from data import emails
 
 #getting email and password and API keys from environment variables 
@@ -64,6 +64,6 @@ def send_sms():
 
 
 
-send_email()
+#send_email()
 #send_sms()
 
